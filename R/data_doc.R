@@ -1,0 +1,21 @@
+#' COVID-19 Dataset
+#'
+#' A structured list object containing functional, scalar, and spatial
+#' components derived from archived COVID-19 data.
+#'
+#' @format A list with five components:
+#' \describe{
+#'   \item{train}{A list containing confirmed cases and death numbers (mean) in the year 2021 for the train set.}
+#'   \item{test}{A list containing confirmed cases and death numbers (mean and upper quantiles) in the year 2022 for the test set.}
+#'   \item{latitude}{A numeric vector of latitude.}
+#'   \item{longitude}{A numeric vector of longitude.}
+#'   \item{weight_matrix}{A spatial weight matrix.}
+#' }
+#'
+#' @details
+#' The data were archived from the COVID19 R package and restructured
+#' for use in the robust functional spatial quantile regression framework
+#' implemented in this package.
+#'
+#' @source https://cran.r-project.org/web/packages/COVID19/index.html
+"covid19_data"
