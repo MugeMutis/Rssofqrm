@@ -96,7 +96,7 @@ data_generation = function(n, j, rho, mean.e, sig.e, out.p = 0){
   W <- generate_W(n)
 
 
-  fYe = ginv(diag(n) - rho*W) %*% argx + ginv(diag(n) - rho*W) %*% err
+  fYe = MASS::ginv(diag(n) - rho*W) %*% argx + MASS::ginv(diag(n) - rho*W) %*% err
   out.index <- NULL
 
   if(out.p > 0){
@@ -140,7 +140,7 @@ data_generation = function(n, j, rho, mean.e, sig.e, out.p = 0){
 
     argx.out = inprod.fdata(fX.out, vBeta.out)
 
-    fYe.out = ginv(diag(n) - rho*W) %*% argx.out + ginv(diag(n) - rho*W) %*% err.out
+    fYe.out = MASS::ginv(diag(n) - rho*W) %*% argx.out + MASS::ginv(diag(n) - rho*W) %*% err.out
 
     fX$data[out.index,] <- fX.out$data[out.index,]
     fYe[out.index,] <- fYe.out[out.index,]
